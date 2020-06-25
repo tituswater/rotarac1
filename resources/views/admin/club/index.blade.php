@@ -7,13 +7,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mt-2">
-                    <p class="h5">Manage Clubs</p>
-
+                    <p class="h5">Manage Club</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Banner -->
+    we jdsjfduu
 @endsection
 @section('content')
     <div class="container  mb-5">

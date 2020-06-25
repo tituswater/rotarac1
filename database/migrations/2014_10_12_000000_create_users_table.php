@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->string('user_dob')->nullable();
             $table->text('bio')->nullable();
-                        $table->string('facebook_profile')->nullable();
+            $table->string('facebook_profile')->nullable();
             $table->string('twitter_profile')->nullable();
             $table->string('linkedin_profile')->nullable();
             $table->string('google_profile')->nullable();
