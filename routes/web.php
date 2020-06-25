@@ -1,0 +1,52 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+//use App\Providers\Auth;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+Route::post('user/change_club', 'UserController@updateUserClub');
+Route::post('change_password', 'UserController@updateUserPassword');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('user/change_avatar', 'UserController@changeAvatar');
+Route::post('save_avatar', 'UserController@changeUserAvatar');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::POST('usersUpdate', 'UserController@updateUser');
+Route::get('/', 'PageController@welcome');
+Route::get('/about', 'PageController@about');
+Route::resource('zones', 'ZoneController');
+Route::resource('states', 'StateController');
+Route::resource('clubs', 'ClubController')
+   /* ->middleware(['auth', 'password.confirm'])*/;
+
+Route::resource('members', 'MemberController');
+Route::resource('offices', 'OfficeController');
+Route::resource('officers', 'OfficerController');
+//Route::resource('users', 'UserController');
+
+//Route::get('changepassword', function() {
+//    $user = App\User::where('email', 'admin@laravel.com')->first();
+//    $user->password = Hash::make('123456');
+//    $user->save();
+//
+//    echo 'Password changed successfully.';
+//});
+Route::prefix('api')->group(function () {
+    Route::post('/process', 'FilepondController@upload')->name('filepond.upload');
+    Route::delete('/process', 'FilepondController@delete')->name('filepond.delete');
+});
