@@ -1,4 +1,4 @@
-@extends('layout.app2')
+@extends('layout.app')
 @include('pages.header')
 @section('banner')
     <!-- Banner -->
@@ -13,7 +13,7 @@
         </div>
     </div>
     <!-- Banner -->
-    we jdsjfduu
+
 @endsection
 @section('content')
     <div class="container  mb-5">
@@ -58,14 +58,17 @@
                                             }}</small>
                                                     </h5>
                                                 </div>
-                                                <p class="font-weight-bold small">President: | Phone Number : </p>
+{{--                                                <p class="font-weight-bold small">President: {{$club->name}} | Phone--}}
+{{--                                                    Number--}}
+{{--                                                    : {{ $club->phone == null ?  '-':--}}
+{{--                        $club->phone }}</p>--}}
 
                                             </a>
 
 
                                         @endforeach
                                     </div>
-
+{{$counst}}
                                 </div>
                             </div>
                             {!! $clubs->links() !!}
@@ -76,7 +79,6 @@
 
                 </div>
             </div>
-
 
 
         </div>

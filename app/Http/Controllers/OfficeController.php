@@ -16,8 +16,11 @@ class OfficeController extends Controller
      */
     public function index()
     {
-        $sh = Office::all();
-        return $sh;
+        $offices = Office::all();
+
+//        $counst = $clubs->count();
+        return view('admin.office.index', compact('offices'));
+//        return $sh;
     }
 
     /**
@@ -39,19 +42,19 @@ class OfficeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'office_title'=>'required',
-            'office_acronym'=>'required'
+            'office_title' => 'required',
+            'office_acronym' => 'required'
         ]);
 
         Office::insert($request->all());
         return Redirect::to('offices')
-        ->with('success','Great! Zone created successfully.');
+            ->with('success', 'Great! Zone created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function show($id)
@@ -62,7 +65,7 @@ class OfficeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id)
@@ -74,7 +77,7 @@ class OfficeController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function update(Request $request, $id)
@@ -85,7 +88,7 @@ class OfficeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id)

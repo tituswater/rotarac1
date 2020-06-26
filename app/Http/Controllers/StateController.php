@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Response;
 use Redirect;
 use App\State;
@@ -17,9 +18,10 @@ class StateController extends Controller
      */
     public function index()
     {
-        $states = State::orderBy('zone_id')->paginate(20);
+        $states = DB::table('states')->join('zones', 'states.zone_id', '=', 'zones.zone_id')->orderBy('state_name')
+            ->paginate(10);
 
-        return view('admin.state.index',compact('states'));
+        return view('admin.state.index', compact('states'));
     }
 
     /**
@@ -42,19 +44,19 @@ class StateController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'state_name'=>'required',
-            'zone_id'=>'required'
+            'state_name' => 'required|unique:states|min:3|alpha',
+            'zone_id' => 'required'
         ]);
 
         State::insert($request->all());
-        return Redirect::to('states')
-        ->with('success','Great! State created successfully.');
+        return back()
+            ->with('success', 'Great! State Added successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function show($id)
@@ -65,7 +67,7 @@ class StateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id)
@@ -77,7 +79,7 @@ class StateController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function update(Request $request, $id)
@@ -88,7 +90,7 @@ class StateController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id)

@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mt-2">
-                    <p class="h5">Manage Club</p>
+                    <p class="h5">Manage officer</p>
                 </div>
             </div>
         </div>
@@ -22,10 +22,10 @@
                 <div class="col-md-12 mb-2 ">
                     <ul class="nav nav-tabs ">
                         <p class="nav-item">
-                            <a class="nav-link active " href="{{ route('clubs.index') }}">List</a>
+                            <a class="nav-link active " href="{{ route('adrrs.index') }}">List</a>
                         </p>
                         <p class="nav-item">
-                            <a class="nav-link " href="{{ route('clubs.create') }}">Create</a>
+                            <a class="nav-link " href="{{ route('adrrs.create') }}">Create</a>
                         </p>
                     </ul>
                 </div>
@@ -34,44 +34,37 @@
                 <div class="col-md-12">
                     <div class="card rounded-0 ">
                         <div class="card-body">
-                            <h5 class="card-title">Clubs in District 9125</h5>
+                            <h5 class="card-title">officers in District 9125</h5>
                             {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
 
                             <br>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="list-group ">
+                                        <table class="table table-striped ">
 
-                                        @foreach($clubs as $club)
-                                            <a href="{{ route('clubs.show', $club->club_name) }}" class=" mb-2 list-group-item list-group-item-action flex-column align-items-start
-            rounded-0 bg-light       border-0">
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    <h5 class="mb-1">Rotaract Club
-                                                        of @if($club->club_acronym == "")
-                                                            {{ $club->club_name }}
-                                                        @else
-                                                            {{$club->club_acronym }}
-                                                        @endif
-                                                        <small class="text-danger p-2">from Zone {{ $club->zone_title }}
-                                                            , {{
-                                            $club->state_name
-                                            }}</small>
-                                                    </h5>
-                                                </div>
-                                                <p class="font-weight-bold small">President: {{$club->name}} | Phone
-                                                    Number
-                                                    : {{ $club->phone == null ?  '-':
-                        $club->phone }}</p>
-
-                                            </a>
+                                            <tbody>
+                                            @if($adrrs->count() >0)
+                                                @foreach($adrrs as $adrr)
+                                                    <tr >
+                                                        <th class="text-left" scope="row">{{$adrr->name}}</th>
+                                                        <td class="text-left"> Zone {{$adrr->zone_title}}</td>
+                                                    </tr>
+                                                @endforeach
+                                            @else
+                                                <td  class="text-danger"  colspan="2">No ADRR Added Yet</td>
+                                            @endif
+                                            </tbody>
+                                        </table>
 
 
-                                        @endforeach
+
+
                                     </div>
 
                                 </div>
                             </div>
-                            {!! $clubs->links() !!}
+                            {!! $adrrs->links() !!}
 
                         </div>
                     </div>

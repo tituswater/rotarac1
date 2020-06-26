@@ -37,6 +37,8 @@ Route::resource('clubs', 'ClubController')
 Route::resource('members', 'MemberController');
 Route::resource('offices', 'OfficeController');
 Route::resource('officers', 'OfficerController');
+Route::resource('presidents', 'PresidentController');
+Route::resource('adrrs', 'AdrrController');
 //Route::resource('users', 'UserController');
 
 //Route::get('changepassword', function() {

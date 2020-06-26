@@ -16,9 +16,11 @@ class CreatePresidentsTable extends Migration
         Schema::create('presidents', function (Blueprint $table) {
             $table->id();
             $table->string('presidents_mail');
-            $table->date('start');
-            $table->date('end');
-            $table->integer('status');
+            $table->string('president_club');
+            $table->string('_token');
+            $table->date('tenure_start');
+            $table->integer('status')->nullable();
+            $table->date('tenure_end');
             $table->timestamps();
         });
     }

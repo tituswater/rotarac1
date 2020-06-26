@@ -286,7 +286,7 @@ body {
 body {
     background-color: #ffffff;
     color: #313539;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
     font-size: 14px;
     line-height: 24px;
 }
@@ -487,7 +487,6 @@ table > tfoot > tr > th,
 table > thead > tr > td,
 table > tbody > tr > td,
 table > tfoot > tr > td {
-    border: 1px solid #dddddd;
     line-height: 2.5;
     padding-left: 3px;
     text-align: center;

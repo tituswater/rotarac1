@@ -6,6 +6,7 @@ use App\Zone;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Redirect;
+
 class ZoneController extends Controller
 {
     /**
@@ -17,7 +18,7 @@ class ZoneController extends Controller
     {
         $zones = Zone::orderBy('zone_title')->paginate(5);
 
-        return view('admin.zone.index',compact('zones'));
+        return view('admin.zone.index', compact('zones'));
     }
 
     /**
@@ -38,19 +39,21 @@ class ZoneController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'zone_title'=>'required'
-        ]);
 
+        $request->validate([
+            'zone_title' => 'required|unique:zones|max:1|alpha'
+        ]);
         Zone::insert($request->all());
-        return Redirect::to('zones')
-        ->with('success','Great! Zone created successfully.');
+        return back()
+            ->with('success', 'Great! Zone created successfully.');
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function show($id)
@@ -61,7 +64,7 @@ class ZoneController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id)
@@ -73,7 +76,7 @@ class ZoneController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function update(Request $request, $id)
@@ -84,7 +87,7 @@ class ZoneController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id)

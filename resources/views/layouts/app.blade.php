@@ -3,6 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F9136B">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#F9136B">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#F9136B">
+    <!-- CSRF Token -->
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -16,7 +22,7 @@
 	{{-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> --}}
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fontawesome-all.css') }}">
-   
+
 
         {{-- <link rel="stylesheet" type="text/css" href="{{ asset('setl/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('setl/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}"> --}}

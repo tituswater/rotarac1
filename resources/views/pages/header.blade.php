@@ -8,7 +8,7 @@
 
                     <p>
                         @guest
-                            <span >Email: <a href="mailto:name@email
+                            <span>Email: <a href="mailto:name@email
                         .com">info@rotaractdistrict9125.org.ng</a></span>
                         @else
 
@@ -31,12 +31,11 @@
                     </p>
 
 
-
                 </aside>
                 <aside class="col-6">
 
                     <div class="float-right">
-                        <ul class="charity-social-network text-white" >
+                        <ul class="charity-social-network text-white">
                             <li>
                                 <a href="#" class="fab fa-facebook-f"></a>
                             </li>
@@ -79,7 +78,8 @@
                                 <li class=""><a href="/">Home</a></li>
                                 <li><a href="/about">About US</a>
                                     <ul class="children">
-                                        <li><a href="#">District Officers</a></li>
+                                        <li><a href="{{route('officers.index')}}">District Officers</a></li>
+                                        <li><a href="{{route('adrrs.index')}}">Ass. Dist. Reps (ADRRs)</a></li>
                                         <li><a href="#">Past Distric Oficers</a></li>
                                         <li><a href="#"> </a></li>
 
@@ -95,7 +95,7 @@
                                                 @endfor
                                             </ul>
                                         </li>
-                                        <li><a href="#">District Officers</a></li>
+
                                     </ul>
                                 </li>
 
@@ -130,10 +130,15 @@
                                 <li><a href="#">Admin</a>
                                     <ul class="children">
                                         <li><a href="{{route('clubs.index')}}">Manage Clubs </a></li>
-                                        <li><a href="{{route('zones.index')}}">Manage Zones </a></li>
+
+                                        <li><a href="{{route('officers.index')}}">District Officers</a></li>
+                                        <li><a href="{{route('adrrs.index')}}">Ass. Dist. Reps (ADRRs)</a></li>
+                                        <li><a href="{{route('presidents.index')}}">Manage Presidents </a></li>
                                         <li><a href="{{route('members.index')}}">Manage members </a></li>
                                         <li><a href="{{route('offices.index')}}">Manage Offices </a></li>
                                         <li><a href="{{route('officers.index')}}">Manage Officers </a></li>
+                                        <li><a href="{{route('zones.index')}}">Manage Zones </a></li>
+                                        <li><a href="{{route('states.index')}}">Manage States </a></li>
 
                                     </ul>
                                 </li>

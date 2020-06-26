@@ -16,6 +16,10 @@ class CreateClubsTable extends Migration
         Schema::create('clubs', function (Blueprint $table) {
             $table->id('club_id');
             $table->string('club_name')->unique();
+            $table->string('current_president');
+            $table->string('meeting_time');
+            $table->string('meeting_venue');
+            $table->string('type');
             $table->integer('state_id');
             $table->text('image')->nullable();
             $table->string('sponsor');

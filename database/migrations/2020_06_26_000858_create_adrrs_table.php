@@ -14,7 +14,13 @@ class CreateAdrrsTable extends Migration
     public function up()
     {
         Schema::create('adrrs', function (Blueprint $table) {
-            $table->id();
+            $table->id('adrr_id');
+            $table->string('adrr_email');
+            $table->string('adrr_zone');
+            $table->string('adrr_tenure_start');
+            $table->string('adrr_tenure_end');
+            $table->string('_token');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

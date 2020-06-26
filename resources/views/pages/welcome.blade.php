@@ -3,6 +3,108 @@
 @section('page_title')
     Home
 @endsection
+@section('css')
+    {{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet"/>--}}
+    {{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet"/>--}}
+    {{--    <style>--}}
+    {{--        .main-slider {--}}
+    {{--            overflow: hidden;--}}
+    {{--            display: block;--}}
+    {{--            overflow: hidden;--}}
+    {{--            width: 100%;--}}
+    {{--        }--}}
+
+    {{--        s.welcome-font {--}}
+    {{--            color: red;--}}
+    {{--        }--}}
+
+    {{--        .slide-box {--}}
+    {{--            position: relative;--}}
+    {{--        }--}}
+
+    {{--        .text-box-slider {--}}
+    {{--            position: absolute;--}}
+    {{--            top: 50%;--}}
+    {{--            left: 0;--}}
+    {{--            text-align: center;--}}
+    {{--            width: 100%;--}}
+    {{--            transform: translateY(-50%);--}}
+    {{--            line-height: 36px;--}}
+    {{--        }--}}
+
+    {{--        samp.welcome-font {--}}
+    {{--            font-family: 'Great Vibes', cursive;--}}
+    {{--            color: #FFF;--}}
+    {{--            font-size: 44px;--}}
+    {{--            font-weight: 600;--}}
+    {{--        }--}}
+
+    {{--        .text-box-slider h1 {--}}
+    {{--            color: red;--}}
+    {{--            text-transform: uppercase;--}}
+    {{--            margin-top: 13px;--}}
+    {{--            background: yellow;--}}
+    {{--            width: 26%;--}}
+    {{--            margin: auto;--}}
+    {{--            font-size: 51px;--}}
+    {{--            font-weight: 600;--}}
+    {{--            display: block;--}}
+    {{--            line-height: 71px;--}}
+    {{--            margin-bottom: 21px;--}}
+    {{--            margin-top: 14px;--}}
+    {{--        }--}}
+
+    {{--        .text-box-slider p {--}}
+    {{--            color: red;--}}
+    {{--            font-size: 17px;--}}
+    {{--            text-align: center;--}}
+    {{--            width: 51%;--}}
+    {{--            margin: auto;--}}
+    {{--            font-weight: 300;--}}
+    {{--            line-height: 24px;--}}
+    {{--            margin-bottom: 20px;--}}
+    {{--        }--}}
+
+    {{--        .btn-slider {--}}
+    {{--            background: yellow;--}}
+    {{--            color: red;--}}
+    {{--            padding: 10px 30px;--}}
+    {{--            border: solid 1px;--}}
+    {{--            display: inline-block;--}}
+    {{--            margin-top: 13px;--}}
+    {{--            font-size: 18px;--}}
+    {{--            transition: all ease-in-out 0.5s;--}}
+    {{--            text-transform: uppercase;--}}
+    {{--            font-weight: normal;--}}
+    {{--        }--}}
+
+    {{--        .btn-slider:hover {--}}
+    {{--            background: transparent;--}}
+    {{--            color: white;--}}
+    {{--            transition: all ease-in-out 0.5s;--}}
+    {{--            color: #fff;--}}
+    {{--            border: solid 1px;--}}
+    {{--        }--}}
+
+    {{--        @media (min-width:999px) {--}}
+    {{--           .main-slider img {--}}
+    {{--               width: 100%;--}}
+    {{--               height: 738px;--}}
+    {{--               object-fit: cover;--}}
+    {{--           }--}}
+
+    {{--       }--}}
+    {{--        @media (max-width:400px) {--}}
+    {{--            .main-slider img {--}}
+    {{--                width: 100%;--}}
+    {{--                height: auto;--}}
+    {{--                object-fit: cover;--}}
+    {{--            }--}}
+
+    {{--        }--}}
+
+    {{--    </style>--}}
+@endsection
 @include('meta::manager', [
             'title'         => 'Home - Rotaract District 9125, Nigeria',
             'description'   => 'Official website of Rotaract District 9125, Nigeria',
@@ -11,102 +113,263 @@
     @include('pages.header')
 @endsection
 @section('banner')
-    <img src="{{asset('extra-images/banner-1.jpg')}}" alt="">
-    {{--    <div class="charity-subheader ">--}}
-    {{--        <span class="black-transparent"></span>--}}
-    {{--        <div class="container">--}}
-    {{--            <div class="row">--}}
-    {{--                <div class="col-md-12">--}}
-
-    {{--                    <h1>This is the Official Website of ROtaract District 9125, Nigeria</h1>--}}
-
+    <br/><br/><br/><br/>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{{asset('extra-images/banner-1.jpg')}}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{asset('extra-images/banner-2.jpg')}}" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{asset('extra-images/bans.jpg')}}" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    {{--    <section class="main-slider mt-md-5 p-0 bg-danger ">--}}
+    {{--        <div class="lazy slider mb-0 p-0" data-sizes="50vw">--}}
+    {{--            <div class="slide-box">--}}
+    {{--                <img src="{{asset('extra-images/bans.jpg')}}">--}}
+    {{--                <div class="text-box-slider">--}}
+    {{--                    <samp class="welcome-font text-danger">Welcome To</samp>--}}
+    {{--                    <h2>Rotaract District 9125 Nigeria</h2>--}}
+    {{--                    <p>Specialists in design and manufacture of all types of window applications and furnishings for--}}
+    {{--                        both residential and commercial projects.</p>--}}
+    {{--                    <a href="#" class="btn-slider">Contact Us</a>--}}
     {{--                </div>--}}
     {{--            </div>--}}
+
+    {{--            <div class="slide-box">--}}
+    {{--                <img class="img-fluid" src="{{asset('extra-images/banner-1.jpg')}}">--}}
+    {{--                <div class="text-box-slider">--}}
+    {{--                    <samp class="welcome-font text-danger">Welcome To</samp>--}}
+    {{--                    <h2>Rotaract District 9125 Nigeria</h2>--}}
+    {{--                    <p>Specialists in design and manufacture of all types of window applications and furnishings for--}}
+    {{--                        both residential and commercial projects.</p>--}}
+    {{--                    <a href="#" class="btn-slider">Contact Us</a>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+
+
+
     {{--        </div>--}}
-    {{--    </div>--}}
+    {{--    </section>--}}
+
+
 @endsection
 
 @section('content')
     <!-- Content -->
 
     <!-- Main Section -->
-    <div class="charity-main-section charity-modren-services-full bg-warning mb-0">
-        <div class="container-fluid">
-            <div class="charity-services charity-modren-services">
-                <ul class="row">
-                    <li class="col px-0">
-                        <div class="charity-modren-services-wrap">
-                            <i class="fas fa-users"></i>
-                            <h2>The FOUR WAY TEST</h2>
-                            <p>1. Is it the <strong>TRUTH</strong>?</p>
-                            <p>2. Is is <strong>FAIR </strong> all concerned?</p>
-                            <p>3. Will it build <strong>GOODWILL </strong> and <strong>BETTER</strong> friendship</p>
-                            <p>4. Will it be <strong>BENEFICIAL</strong> to all concerned?</p>
-                        </div>
-                    </li>
-                    <li class="col px-0">
-                        <div class="charity-modren-services-wrap">
-                            <i class="fas fa-book"></i>
-                            <h2>Area of Focus</h2>
-                            <p>1. Peace Building and Conflict Resolution</p>
-                            <p>2. Disease Prevention and Treatment</p>
-                            <p>3. Water, Sanitation and Hygiene</p>
-                            <p>4. Maternal and child health</p>
-                            <p>5. Basic education and literacy</p>
-                            <p>6. Community Economic Development</p>
-                        </div>
-                    </li>
-                    <li class="col px-0">
-                        <div class="charity-modren-services-wrap">
-                            <i class="fas fa-handshake"></i>
-                            <h2>Avenues of Service</h2>
-                            <p>1. Club Service</p>
-                            <p>2. Vocational Service</p>
-                            <p>3. Community Service</p>
-                            <p>4. International Service</p>
-                            <p>5. Youth Service</p>
 
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <!-- Main Section -->
 
-
-    <div class="charity-main-content">
+    <div class="charity-main-content ">
         <!-- Main Section -->
 
-        <!-- Main Section -->
-        <div class="charity-main-section charity-aboutus-text-full bg-light">
+        <div class="charity-main-section charity-aboutus-text-full bg-white pb-4 ">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5">
-                        <figure class="chrity-thumb-style">
-                            <img src="{{asset('extra-images/aboutus-img.png')}}" alt="">
-                        </figure>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="charity-aboutus-text">
-                            <h2>What is Rotaract</h2>
+                    {{--                    <div class="col-md-12">--}}
+                    {{--                        <figure class="chrity-thumb-style">--}}
+                    {{--                            <img src="{{asset('extra-images/aboutus-img.png')}}" height="100" alt="">--}}
+                    {{--                        </figure>--}}
+                    {{--                    </div>--}}
+                    <div class="col-md-12">
+
+
+                        <div class="bg-primary p-5 text-white">
+                            <h2 class="display-4 text-white">What is Rotaract</h2>
+                            <hr/>
                             <p>Rotaract brings together people of ages 18 and above together to exchange ideas with
                                 leaders in the community, develop leadership and professional skills, and have fun
                                 through service. In communities worldwide, Rotary and Rotaract members work side by side
                                 to take action through service. </p>
-                            <div class="bg-danger p-5 text-white">
-                                <h2 class="text-white">About Rotaract District 9125 Nigeria</h2>
-                                <p>The defunct Rotary Districts 9120 and 9130 birthed our present District 9125
-                                    following a
-                                    decision by Rotary International Board in their February 2006 meeting for a merger
-                                    of
-                                    the two Districts as a result of their respective shortfall in membership strength
-                                    as
-                                    obtainable per district as required by Rotary International. This necessitated the
-                                    two
-                                    Districts, 9120 and 9130 to work out modalities on the sustenance of the merger
-                                    officially announced in 2008 and became a reality on 2009/2010 Rotary Year. </p>
-                                <a href="/about" class="btn  btn-outline-light">Read more..</a>
+                            <a href="/about" class="btn  btn-outline-light">Read more..</a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="charity-main-section charity-aboutus-text-full bg-danger text-white pb-5 pt-5">
+            <div class="container">
+                <div class="row justify-content-center mt-4 mb-4">
+                    <div class="col-md-12">
+                        <h1 class="display-4 pb-3 text-white">Rotaract
+                            <strong class="text-light   ">FOUR WAY TEST</strong></h1>
+                        </strong></h1>
+                        <ol class="text-white">
+                            <li>
+                                <h2 class="text-white">Is it the&nbsp;<strong class="text-white">TRUTH</strong>?</h2>
+                            </li>
+                            <li>
+                                <h2 class="text-white">Is it&nbsp;<strong class="text-white">FAIR&nbsp;</strong>all
+                                    concerned?</h2>
+                            </li>
+                            <li>
+                                <h2 class="text-white">Will it build&nbsp;<strong
+                                        class="text-white">GOODWILL&nbsp;</strong>and&nbsp;
+                                    <strong class="text-white">BETTER</strong>&nbsp;friendship?
+                                </h2>
+                            </li>
+                            <li>
+                                <h2 class="text-white">Will it be&nbsp;<strong class="text-white">BENEFICIAL</strong>&nbsp;to
+                                    all
+                                    concerned?</h2>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="charity-main-section charity-aboutus-text-full bg-light pt-5 pb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class=" text-secondary">
+                            <h1 class="text-dark display-4">About Rotaract District 9125 Nigeria</h1>
+                            <hr/>
+                            <p style="font-size: 18pt; line-height: 35pt;">The defunct Rotary Districts 9120 and 9130
+                                birthed our
+                                present
+                                District
+                                9125
+                                following a
+                                decision by Rotary International Board in their February 2006 meeting for a merger of
+                                the two Districts as a result of their respective shortfall in membership strength as
+                                obtainable per district as required by Rotary International. This necessitated the two
+                                Districts, 9120 and 9130 to work out modalities on the sustenance of the merger
+                                officially announced in 2008 and became a reality on 2009/2010 Rotary Year.</p>
+                            <a href="/about" class="btn  btn-outline-danger btn-lg">Read more..</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="charity-main-section charity-aboutus-text-full bg-white pt-5 pb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h2 class="display-4 text-center" > <strong>ROTARACT</strong> <br/>Avenues of Service </h2>
+
+                    <div class="col-md-6">
+                        <div class=" text-secondary text-center">
+                            <h2>Club Service</h2>
+                            <h2>Vocational Service</h2>
+                            <h2>Community Service</h2>
+                            <h2>International Service</h2>
+                            <h2>Youth Service</h2>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="charity-main-section charity-aboutus-text-full bg-light pt-5 pb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 p-3">
+                        <h1 class="display-4 text-center">Our Causes</h1>
+
+                        <p class="text-center" style="font-family: 'Century Gothic'; font-size:14pt;
+                        line-height:25pt;color:grey">
+                            Rotary is dedicated to six areas of focus to build international relationships, improve
+                            lives, and create a better world to support our peace efforts and end polio forever.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <div class="card" style="height: 550px">
+                            <img class="card-img-top" src="{{asset('images/promote_peace.jpg')}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Promoting peace</h5>
+                                <p class="card-text">Rotary encourages conversations to foster understanding within and
+                                    across cultures. We train adults and young leaders to prevent and mediate conflict
+                                    and help refugees who have fled dangerous areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card" style="height: 550px">
+                            <img class="card-img-top" src="{{asset('images/prevent_disease.jpg')}}"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Fighting disease</h5>
+                                <p class="card-text">We educate and equip communities to stop the spread of
+                                    life-threatening diseases like polio, HIV/AIDS, and malaria. We improve and expand
+                                    access to low-cost and free health care in developing areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card" style="height: 550px">
+                            <img class="card-img-top" src="{{asset('images/clean_water.jpg')}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Providing clean water, sanitation, and hygiene</h5>
+                                <p class="card-text">We support local solutions to bring clean water, sanitation, and
+                                    hygiene to more people every day. We don’t just build wells and walk away. We share
+                                    our expertise with community leaders and educators to make sure our projects succeed
+                                    long-term.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card" style="height: 550px">
+                            <img class="card-img-top" src="{{asset('images/mother.jpg')}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Saving mothers and children</h5>
+                                <p class="card-text">Nearly 6 million children under the age of five die each year
+                                    because of malnutrition, poor health care, and inadequate sanitation. We expand
+                                    access to quality care, so mothers and their children can live and grow
+                                    stronger.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="card" style="height: 550px">
+                            <img class="card-img-top" src="{{asset('images/education.jpg')}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Supporting education</h5>
+                                <p class="card-text">More than 775 million people over the age of 15 are illiterate. Our
+                                    goal is to strengthen the capacity of communities to support basic education and
+                                    literacy, reduce gender disparity in education, and increase adult literacy.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="card" style="height: 550px">
+                            <img class="card-img-top" src="{{asset('images/economi.jpg')}}" alt="Card image cap">
+                            <div class="card-body ">
+                                <h5 class="card-title"> Growing local economies</h5>
+                                <p class="card-text">We carry out service projects that enhance economic and community
+                                    development and create opportunities for decent and productive work for young and
+                                    old. We also strengthen local entrepreneurs and community leaders, particularly
+                                    women, in impoverished communities.</p>
                             </div>
                         </div>
                     </div>
@@ -115,6 +378,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="charity-main-section bg-danger charity_counter_full m-0">
             <span class="black-transparent"></span>
@@ -180,48 +444,50 @@
 
         <!-- Main Section -->
         {{--        Clubs--}}
-        <div class="charity-main-section latest_causes_full mt-0 bg-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="charity-fancy-title">
-                            <h2>Clubs across the District </h2><br>
-                            <span class="muted text-warning">Note: Only Three Clubs are selected randomly</span>
-                        </div>
-                        <div class="charity-causes charity-cause-grid">
-                            <ul class="row">
-                                @foreach ($clubs as $club )
-                                    <li class="col-md-4 ">
-                                        <figure><a href="#"><img src="{{asset('images/rotaract_district9125.png') }}"
-                                                                 alt="{{ $club->club_name }}"></a>
-                                            <figcaption><a href="#" class="charity-cause-grid-hover">Open </a>
-                                            </figcaption>
-                                        </figure>
-                                        <div data-width='90' data-target='95' class="charity-cause-progressbar"></div>
-                                        <div class="charity-cause-grid-text bg-light">
-                                            <small class="charity-cause-raised">Zone <br>
-                                                <strong> {{ $club->zone_title }} </strong></small>
-                                            <small class="charity-cause-raised">State <br>
-                                                <strong>{{ $club->state_name }}</strong>&nbsp;</small>
-                                            <div class="clearfix"></div>
-                                            <h2><a href="#">Rotaract Club of {{ $club->club_acronym }}</a></h2>
-                                            <p>President: <br/>
-                                                Venue: <br/>
-                                                Time:
-                                                Phone:</p>
-                                            <a href="{{ route('clubs.show', $club->club_name) }}"
-                                               class="charity-more-btn"><i class="fas fa-arrow-right"></i> View</a>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
+        @if($clubs->count() > 0)
+            <div class="charity-main-section latest_causes_full mt-0 bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="charity-fancy-title">
+                                <h2>Clubs across the District </h2><br>
+                                <span class="muted text-warning">Note: Only Three Clubs are selected randomly</span>
+                            </div>
+                            <div class="charity-causes charity-cause-grid">
+                                <ul class="row">
+                                    @foreach ($clubs as $club )
+                                        <li class="col-md-4 ">
+                                            <figure><a href="#"><img src="{{asset('images/rotaract_district9125.png') }}"
+                                                                     alt="{{ $club->club_name }}"></a>
+                                                <figcaption><a href="#" class="charity-cause-grid-hover">Open </a>
+                                                </figcaption>
+                                            </figure>
+                                            <div data-width='90' data-target='95' class="charity-cause-progressbar"></div>
+                                            <div class="charity-cause-grid-text bg-light">
+                                                <small class="charity-cause-raised text-center">Zone <br>
+                                                    <strong> {{ $club->zone_title }} </strong></small>
+                                                <small class="charity-cause-raised text-center">State <br>
+                                                    <strong>{{ $club->state_name }}</strong>&nbsp;</small>
+                                                <div class="clearfix"></div>
+                                                <h2><a href="#">Rotaract Club of {{ $club->club_acronym }}</a></h2>
+                                                <p>President: {{ $club->name}}<br/>
+                                                    Venue: {{ $club->meeting_venue }} <br/>
+                                                    Time: {{ $club->meeting_time }} <br/>
+                                                    Phone: {{ $club->phone }}</p>
+                                                <a href="{{ route('clubs.show', $club->club_name) }}"
+                                                   class="charity-more-btn"><i class="fas fa-arrow-right"></i> View</a>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
 
+                            </div>
+                            <div class="charity-loadbtn"><a href="{{ route('clubs.index') }}">Load More </a></div>
                         </div>
-                        <div class="charity-loadbtn"><a href="{{ route('clubs.index') }}">Load More </a></div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
         <!-- Main Section -->
 
         <!-- Main Section -->
@@ -230,9 +496,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="charity-fancy-title">
-                            <h2>Our Leaders</h2>
+                            <h2>Our District Leaders</h2>
                         </div>
-                        <div class="charity-team charity-simple-team">
+                        <div class="charity-team charity-simple-team ">
                             <ul class="row">
                                 <li class="col-md-4">
                                     <figure>
@@ -371,6 +637,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Main Section -->
 
         {{--    <!-- Main Section -->--}}
@@ -539,40 +806,52 @@
 @section('bmm')
     <script>
         jQuery(document).ready(function ($) {
+            // $(".lazy").slick({
+            //     lazyLoad: 'ondemand', // ondemand progressive anticipated
+            //     infinite: true,
+            //     arrows: true,
+            //     autoplay: true,
+            //     autoplaySpeed: 5000,
+            // });
 
-            // Counter
-            var a = 0;
-            $(window).scroll(function () {
-
-                var oTop = $('#counter').offset().top - window.innerHeight;
-                if (a == 0 && $(window).scrollTop() > oTop) {
-                    $('.counter-value').each(function () {
-                        var $this = $(this),
-                            countTo = $this.attr('data-count');
-                        $({
-                            countNum: $this.text()
-                        }).animate({
-                                countNum: countTo
-                            },
-
-                            {
-
-                                duration: 5000,
-                                easing: 'swing',
-                                step: function () {
-                                    $this.text(Math.floor(this.countNum));
-                                },
-                                complete: function () {
-                                    $this.text(this.countNum);
-                                    //alert('finished');
-                                }
-
-                            });
-                    });
-                    a = 1;
-                }
-
-            });
         });
+        // Counter
+        var a = 0;
+        $(window).scroll(function () {
+
+            var oTop = $('#counter').offset().top - window.innerHeight;
+            if (a == 0 && $(window).scrollTop() > oTop) {
+                $('.counter-value').each(function () {
+                    var $this = $(this),
+                        countTo = $this.attr('data-count');
+                    $({
+                        countNum: $this.text()
+                    }).animate({
+                            countNum: countTo
+                        },
+
+                        {
+
+                            duration: 5000,
+                            easing: 'swing',
+                            step: function () {
+                                $this.text(Math.floor(this.countNum));
+                            },
+                            complete: function () {
+                                $this.text(this.countNum);
+                                //alert('finished');
+                            }
+
+                        });
+                });
+                a = 1;
+            }
+
+        });
+
+
     </script>
+
+    {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
 @endsection

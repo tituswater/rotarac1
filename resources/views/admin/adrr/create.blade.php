@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mt-2">
-                    <p class="h5">Manage Clubs</p>
+                    <p class="h5">Manage ADDRs</p>
 
                 </div>
             </div>
@@ -23,10 +23,10 @@
                 <div class="col-md-12 mb-2 ">
                     <ul class="nav nav-tabs ">
                         <p class="nav-item">
-                            <a class="nav-link  " href="{{ route('clubs.index') }}">List</a>
+                            <a class="nav-link  " href="{{ route('adrrs.index') }}">List</a>
                         </p>
                         <p class="nav-item">
-                            <a class="nav-link active" href="{{ route('clubs.create') }}">Create</a>
+                            <a class="nav-link active" href="{{ route('adrrs.create') }}">Create</a>
                         </p>
                     </ul>
                 </div>
@@ -52,70 +52,46 @@
                                     </ul>
                                 </div>
                             @endif
-                            <h5 class="card-title">Add Club</h5>
+                            <h5 class="card-title">Add ADRR</h5>
                             {{-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
-                            <form class="needs-validation card-text" action="{{ route('clubs.store') }}" method="POST"
+                            <form class="needs-validation card-text" action="{{ route('adrrs.store') }}" method="POST"
                                   novalidate>
                                 {{ csrf_field() }}
                                 <div class="form-row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="validationCustom01">Rotaract Club of</label>
-                                        <input type="text" name="club_name" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="club name" required>
-                                        <div class="invalid-feedback">Input a Club name</div>
+                                        <label for="validationCustom01">ADRR Email</label>
+                                        <input type="email" name="adrr_email" class="form-control rounded-0 "
+                                               id="validationCustom01" placeholder="ADRR email" required>
+
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationCustom01">Chattered Date</label>
-                                        <input data-provide="datepicker" name="chartered"
-                                               class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="mm/dd/yyyy" required>
-                                        <div class="invalid-feedback">Seect Date</div>
-                                    </div>
+
                                     <div class="mb-3 col-md-6">
-                                        <label for="validationCustom01">State</label>
-                                        <select class="custom-select" name="state_id" required>
-                                            <option value="">Select state</option>
-                                            @foreach ($states as $state )
-                                                <option value="{{ $state->state_id }}"> {{ $state->state_name }} State
+                                        <label for="validationCustom01">Zone</label>
+                                        <select class="custom-select" name="adrr_zone" required>
+                                            <option value="">Select Zone</option>
+                                            @foreach ($zones as $zone )
+                                                <option value="{{ $zone->zone_id }}"> Zone {{ $zone->zone_title }}
                                                 </option>
                                             @endforeach
 
                                         </select>
                                         <div class="invalid-feedback">Seect state</div>
                                     </div>
+
                                     <div class="col-md-6 mb-3">
-                                        <label for="validationCustom01">Sponsoring Rotary Club</label>
-                                        <input type="text" name="sponsor" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="Sponsor" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationCustom01">Club Acronym</label>
-                                        <input type="text" name="club_acronym" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="E.G. EKSU" required>
-                                        <div class="invalid-feedback">Input Club ACRONYM Eg. EKSU</div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationCustom01">Meeting Time</label>
-                                        <input type="text" name="meeting_time" class="form-control rounded-0 "
+                                        <label for="validationCustom01">Tenure Start</label>
+                                        <input type="text" name="adrr_tenure_start" class="form-control rounded-0 "
                                                id="validationCustom01" placeholder="E.G. 14:30" required>
                                     </div><div class="col-md-6 mb-3">
-                                        <label for="validationCustom01">Meeting Venue</label>
-                                        <input type="text" name="meeting_venue" class="form-control rounded-0 "
+                                        <label for="validationCustom01">Tenure End</label>
+                                        <input type="text" name="adrr_tenure_end" class="form-control rounded-0 "
                                                id="validationCustom01" placeholder="E.g. Pathfinders Hotel,
                                                Ado-EKiti" required>
                                     </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label for="validationCustom01">Type of Club</label>
-                                        <select class="custom-select" name="type" required>
-                                        <option value="">Select Club type</option>
-                                        <option value="Community Base">Community Base</option>
-                                        <option value="Instituitional Base">Instituitional Base</option>
-                                        </select>
-                                        <div class="invalid-feedback">Please Select Club type</div>
-                                    </div>
+
 
                                 </div>
-                                <button class="btn btn-primary rounded-0" type="submit">Add State</button>
+                                <button class="btn btn-primary rounded-0" type="submit">Add ADRR</button>
                             </form>
 
                             <script>

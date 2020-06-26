@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Officer;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Redirect;
+use DB;
 
 class OfficerController extends Controller
 {
@@ -17,7 +18,15 @@ class OfficerController extends Controller
      */
     public function index()
     {
-        //
+        $officers = DB::table('officers')
+            ->join('users', 'officers.member_email', '=', 'users.email')
+            ->join('clubs', 'users.member_club', '=', 'clubs.club_id')
+            ->join('states', 'states.state_id', '=', 'clubs.state_id')
+            ->join('zones', 'states.zone_id', '=', 'zones.zone_id')
+            ->join('offices', 'officers.office_held', '=', 'offices.office_id')
+            ->paginate(18);
+//        $counst = $clubs->count();
+        return view('admin.officer.index', compact('officers'));
     }
 
     /**
@@ -28,7 +37,7 @@ class OfficerController extends Controller
     public function create()
     {
         $offices = Office::orderBy('office_title')->get();
-      return view('admin.officer.create', compact('offices'));
+        return view('admin.officer.create', compact('offices'));
     }
 
     /**
@@ -41,20 +50,19 @@ class OfficerController extends Controller
 
     {
         $request->validate([
-            'member_email'=>'required',
-        'office_held'=>'required',
-        'from'=>'required',
-        'to'=>'required',
+            'member_email' => 'required',
+            'office_held' => 'required',
+            'from' => 'required',
+            'to' => 'required',
         ]);
         Officer::insert($request->all());
-        return Redirect::to('officers')
-        ->with('success','Great! Zone created successfully.');
+        return back()->with('success', 'Great! Officers added successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function show($id)
@@ -65,7 +73,7 @@ class OfficerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id)
@@ -77,7 +85,7 @@ class OfficerController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function update(Request $request, $id)
@@ -88,7 +96,7 @@ class OfficerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id)

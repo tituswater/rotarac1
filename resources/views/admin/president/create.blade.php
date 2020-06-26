@@ -53,27 +53,39 @@
                                     </ol>
                                 </div>
                             @endif
-                            <form class="needs-validation card-text" action="{{ route('states.store') }}" method="POST" novalidate>
+                            <form class="needs-validation card-text" action="{{ route('presidents.store') }}" method="POST"
+                                  novalidate>
                                 {{ csrf_field() }}
                                 <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="control-label" for="validationCustom01">State</label>
-                                        <input type="text" name="state_name" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="input State"  required>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="control-label" for="validationCustom01">President's Email</label>
+                                        <input type="email" name="presidents_mail" class="form-control rounded-0 "
+                                               id="validationCustom01" placeholder="president@email.com "  required>
                                     </div>
-                                    <div class="mb-3 col-md-12">
-                                        <label class="control-label" for="validationCustom01">Zone</label>
-                                        <select class="custom-select" name="zone_id" required>
-                                            <option value="">Select Zone</option>
-                                            @foreach ($zones as $zone )
-                                                <option value="{{ $zone->zone_id }}">Zone {{ $zone->zone_title }}</option>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="control-label" for="validationCustom01">Club</label>
+                                        <select class="custom-select" name="president_club" required>
+                                            <option value="">Select Club</option>
+                                            @foreach ($clubs as $club )
+                                                <option value="{{ $club->club_id }}">RAC {{ $club->club_name
+                                                }}</option>
                                             @endforeach
 
                                         </select>
                                         <div class="invalid-feedback">Example invalid custom select feedback</div>
                                     </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="control-label" for="validationCustom01">Tenure Start</label>
+                                        <input type="date" name="tenure_start" class="form-control rounded-0 "
+                                               id="validationCustom01" placeholder=" "  required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="control-label" for="validationCustom01">Tenure End</label>
+                                        <input type="date" name="tenure_end" class="form-control rounded-0 "
+                                               id="validationCustom01" placeholder=" "  required>
+                                    </div>
                                 </div>
-                                <button class="btn btn-primary rounded-0" type="submit">Add State</button>
+                                <button class="btn btn-primary rounded-0" type="submit">Add President</button>
                             </form>
 
                             <script>

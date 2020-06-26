@@ -15,9 +15,11 @@ class PageController extends Controller
    {
     // $clubs = Club::orderBy('name', 'desc')->paginate(5);
     $clubs = DB::table('clubs')
-    ->join('states', 'clubs.state_id', '=', 'states.state_id')
-    ->join('zones', 'states.zone_id', '=', 'zones.zone_id')
-    // ->join('members', 'clubs.club_id', '=', 'members.member_club')
+        ->join('states', 'states.state_id', '=', 'clubs.state_id')
+        ->join('zones', 'states.zone_id', '=', 'zones.zone_id')
+        ->join('presidents', 'presidents.president_club', '=', 'clubs.club_id')
+        ->join('users', 'presidents.presidents_mail', '=', 'users.email')
+    // ->join('members', 'clubs.club_id', '=', 'members.member_club')->random()
     ->take(3)
     ->get();
     $officers = DB::table('officers')->get();

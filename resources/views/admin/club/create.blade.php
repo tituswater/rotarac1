@@ -58,28 +58,30 @@
                                   novalidate>
                                 {{ csrf_field() }}
                                 <div class="form-row">
-                                    <div class="col-md-12 mb-3">
+                                    <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Rotaract Club of</label>
                                         <input type="text" name="club_name" class="form-control rounded-0 "
                                                id="validationCustom01" placeholder="club name" required>
+                                        <div class="invalid-feedback">Input a Club name</div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Chattered Date</label>
                                         <input data-provide="datepicker" name="chartered"
                                                class="form-control rounded-0 "
                                                id="validationCustom01" placeholder="mm/dd/yyyy" required>
+                                        <div class="invalid-feedback">Seect Date</div>
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="validationCustom01">State</label>
                                         <select class="custom-select" name="state_id" required>
                                             <option value="">Select state</option>
                                             @foreach ($states as $state )
-                                                <option value="{{ $state->state_id }}"> {{ $state->state_name }}state
+                                                <option value="{{ $state->state_id }}"> {{ $state->state_name }} State
                                                 </option>
                                             @endforeach
 
                                         </select>
-                                        <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                        <div class="invalid-feedback">Seect state</div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Sponsoring Rotary Club</label>
@@ -90,8 +92,27 @@
                                         <label for="validationCustom01">Club Acronym</label>
                                         <input type="text" name="club_acronym" class="form-control rounded-0 "
                                                id="validationCustom01" placeholder="E.G. EKSU" required>
+                                        <div class="invalid-feedback">Input Club ACRONYM Eg. EKSU</div>
                                     </div>
-
+                                    <div class="col-md-6 mb-3">
+                                        <label for="validationCustom01">Meeting Time</label>
+                                        <input type="text" name="meeting_time" class="form-control rounded-0 "
+                                               id="validationCustom01" placeholder="E.G. 14:30" required>
+                                    </div><div class="col-md-6 mb-3">
+                                        <label for="validationCustom01">Meeting Venue</label>
+                                        <input type="text" name="meeting_venue" class="form-control rounded-0 "
+                                               id="validationCustom01" placeholder="E.g. Pathfinders Hotel,
+                                               Ado-EKiti" required>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label for="validationCustom01">Type of Club</label>
+                                        <select class="custom-select" name="type" required>
+                                        <option value="">Select Club type</option>
+                                        <option value="Community Base">Community Base</option>
+                                        <option value="Instituitional Base">Instituitional Base</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please Select Club type</div>
+                                    </div>
 
                                 </div>
                                 <button class="btn btn-primary rounded-0" type="submit">Add State</button>
