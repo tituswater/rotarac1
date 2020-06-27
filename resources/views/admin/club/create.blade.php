@@ -15,6 +15,13 @@
     </div>
     <!-- Banner -->
 @endsection
+@section('css')
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet"
+          href="{{asset('/css/bootstrap-timepicker.min.css')}}">
+@endsection
 @section('content')
 
     <div class="container mb-5">
@@ -26,7 +33,8 @@
                             <a class="nav-link  " href="{{ route('clubs.index') }}">List</a>
                         </p>
                         <p class="nav-item">
-                            <a class="nav-link active" href="{{ route('clubs.create') }}">Create</a>
+                            <a class="nav-link active bg-danger text-white"
+                               href="{{ route('clubs.create') }}">Create</a>
                         </p>
                     </ul>
                 </div>
@@ -58,7 +66,7 @@
                                   novalidate>
                                 {{ csrf_field() }}
                                 <div class="form-row">
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-12 mb-3">
                                         <label for="validationCustom01">Rotaract Club of</label>
                                         <input type="text" name="club_name" class="form-control rounded-0 "
                                                id="validationCustom01" placeholder="club name" required>
@@ -66,9 +74,10 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Chattered Date</label>
-                                        <input data-provide="datepicker" name="chartered"
-                                               class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="mm/dd/yyyy" required>
+                                        <input name="chartered"
+                                               class="form-control rounded-0 " data-date-format="yyyy-mm-dd"
+                                               data-provide="datepicker"
+                                               id="validationCustom01" placeholder="yyyy-mm-dd" required>
                                         <div class="invalid-feedback">Seect Date</div>
                                     </div>
                                     <div class="mb-3 col-md-6">
@@ -95,10 +104,32 @@
                                         <div class="invalid-feedback">Input Club ACRONYM Eg. EKSU</div>
                                     </div>
                                     <div class="col-md-6 mb-3">
+                                        <label for="validationCustom01">Meeting Day</label>
+                                        <select name="meeting_day" class="custom-select rounded-0 "
+                                                id="validationCustom01" required>
+                                            <option value="">Select Day</option>
+                                            <option value="Sunday">Sunday</option>
+                                            <option value="Monday">Monday</option>
+                                            <option value="Tuesday">Tuesday</option>
+                                            <option value="Wednesday">Wednesday</option>
+                                            <option value="Thursday">Thursday</option>
+                                            <option value="Friday">Friday</option>
+                                            <option value="Saturday">Saturday</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Meeting Time</label>
-                                        <input type="text" name="meeting_time" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="E.G. 14:30" required>
-                                    </div><div class="col-md-6 mb-3">
+                                        <div class="input-group bootstrap-timepicker timepicker">
+                                            <input id="timepicker1" type="text" name="meeting_time"
+                                                   class="form-control rounded-0 " required>
+                                            <span class="input-group-addon"><span class="material-icons">
+access_time
+</span></span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Meeting Venue</label>
                                         <input type="text" name="meeting_venue" class="form-control rounded-0 "
                                                id="validationCustom01" placeholder="E.g. Pathfinders Hotel,
@@ -107,12 +138,13 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="validationCustom01">Type of Club</label>
                                         <select class="custom-select" name="type" required>
-                                        <option value="">Select Club type</option>
-                                        <option value="Community Base">Community Base</option>
-                                        <option value="Instituitional Base">Instituitional Base</option>
+                                            <option value="">Select Club type</option>
+                                            <option value="Community Base">Community Base</option>
+                                            <option value="Instituitional Base">Instituitional Base</option>
                                         </select>
                                         <div class="invalid-feedback">Please Select Club type</div>
                                     </div>
+
 
                                 </div>
                                 <button class="btn btn-primary rounded-0" type="submit">Add State</button>
@@ -147,17 +179,17 @@
             </div>
 
 
-
         </div>
     </div>
 
 
 @endsection
 @section('bmm')
+
     <script>
         $(document).ready(function () {
-
             $('.datepicker').datepicker({
+                autoclose: true,
                 format: {
                     /*
                      * Say our UI should display a week ahead,
@@ -177,6 +209,11 @@
                     }
                 }
             });
+            $('#timepicker1').timepicker();
         });
     </script>
+    <script
+        src="{{asset('script/bootstrap-timepicker.min.js')}}"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 @endsection

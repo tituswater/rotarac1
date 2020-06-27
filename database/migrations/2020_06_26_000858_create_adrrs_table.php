@@ -17,8 +17,8 @@ class CreateAdrrsTable extends Migration
             $table->id('adrr_id');
             $table->string('adrr_email');
             $table->string('adrr_zone');
-            $table->string('adrr_tenure_start');
-            $table->string('adrr_tenure_end');
+            $table->date('adrr_tenure_start');
+            $table->date('adrr_tenure_end');
             $table->string('_token');
             $table->integer('status')->default(0);
             $table->timestamps();

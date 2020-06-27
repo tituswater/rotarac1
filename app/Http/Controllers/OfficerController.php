@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Office;
-use Illuminate\Http\Request;
 use App\Officer;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Redirect;
 use DB;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class OfficerController extends Controller
 {
@@ -49,14 +48,37 @@ class OfficerController extends Controller
     public function store(Request $request)
 
     {
+//        $user = User::where('email', $request->member_email)->first()->email;
+//        $count = $user->count();
+
         $request->validate([
             'member_email' => 'required',
             'office_held' => 'required',
             'from' => 'required',
             'to' => 'required',
         ]);
+
+
         Officer::insert($request->all());
         return back()->with('success', 'Great! Officers added successfully.');
+    }
+
+    public function ListDistrictOfficer()
+    {
+        $officers = DB::table('officers')
+            ->join('users', 'officers.member_email', '=', 'users.email')
+            ->join('clubs', 'users.member_club', '=', 'clubs.club_id')
+            ->join('states', 'states.state_id', '=', 'clubs.state_id')
+            ->join('zones', 'states.zone_id', '=', 'zones.zone_id')
+            ->join('offices', 'officers.office_held', '=', 'offices.office_id')->Orderby('name')
+            ->paginate(18);
+//        $counst = $clubs->count();
+        return view('district_officers', compact('officers'));
+    }
+
+    public function ListPastDistrictOfficer()
+    {
+
     }
 
     /**

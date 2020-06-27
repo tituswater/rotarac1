@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 //use App\Providers\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::post('change_password', 'UserController@updateUserPassword');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('user/change_avatar', 'UserController@changeAvatar');
 Route::post('save_avatar', 'UserController@changeUserAvatar');
+Route::get('adrr/list', 'AdrrController@ListAdrr');
+Route::get('district/officers/list', 'OfficerController@ListDistrictOfficer');
+Route::get('past/district/list', 'OfficerController@ListPastDistrictOfficer');
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
@@ -31,8 +35,8 @@ Route::get('/', 'PageController@welcome');
 Route::get('/about', 'PageController@about');
 Route::resource('zones', 'ZoneController');
 Route::resource('states', 'StateController');
-Route::resource('clubs', 'ClubController')
-   /* ->middleware(['auth', 'password.confirm'])*/;
+Route::resource('clubs', 'ClubController')/* ->middleware(['auth', 'password.confirm'])*/
+;
 
 Route::resource('members', 'MemberController');
 Route::resource('offices', 'OfficeController');

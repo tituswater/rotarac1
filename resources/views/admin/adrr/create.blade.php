@@ -1,5 +1,9 @@
 @extends('layout.app')
 @include('pages.header')
+@section('css')
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+@endsection
 @section('banner')
     <!-- Banner -->
     <div class="charity-subheader ">
@@ -81,12 +85,14 @@
                                     <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Tenure Start</label>
                                         <input type="text" name="adrr_tenure_start" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="E.G. 14:30" required>
-                                    </div><div class="col-md-6 mb-3">
+                                               id="validationCustom01"
+                                               data-date-format="yyyy-mm-dd" data-provide="datepicker" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Tenure End</label>
                                         <input type="text" name="adrr_tenure_end" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="E.g. Pathfinders Hotel,
-                                               Ado-EKiti" required>
+                                               id="validationCustom01" data-date-format="yyyy-mm-dd"
+                                               data-provide="datepicker" required>
                                     </div>
 
 
@@ -94,9 +100,9 @@
                                 <button class="btn btn-primary rounded-0" type="submit">Add ADRR</button>
                             </form>
 
-                            <script>
-                                // Example starter JavaScript for disabling form submissions if there are invalid fields
-                                (function () {
+                                <script>
+                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                    (function () {
                                     'use strict';
                                     window.addEventListener('load', function () {
                                         // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -129,7 +135,9 @@
 
 
 @endsection
+
 @section('bmm')
+
     <script>
         $(document).ready(function () {
 
@@ -155,4 +163,6 @@
             });
         });
     </script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 @endsection

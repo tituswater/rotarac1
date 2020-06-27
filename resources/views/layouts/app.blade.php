@@ -13,19 +13,19 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Rotaract District 9125 Nigeria') }}</title>
 
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+{{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
-    <!-- Fonts -->
-	{{-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> --}}
+<!-- Fonts -->
+    {{-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> --}}
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fontawesome-all.css') }}">
 
 
-        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('setl/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('setl/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('setl/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('setl/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}"> --}}
         <link rel="stylesheet" type="text/css" href="{{ asset('setl/vendor/animate/animate.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('setl/vendor/css-hamburgers/hamburgers.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('setl/vendor/animsition/css/animsition.min.css') }}">

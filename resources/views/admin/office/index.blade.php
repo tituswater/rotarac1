@@ -7,12 +7,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mt-2">
-                    <p class="h5">Manage officer</p>
+                    <p class="h5">Manage Offices</p>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- Banner -->
 
 @endsection
 @section('content')
@@ -22,10 +22,11 @@
                 <div class="col-md-12 mb-2 ">
                     <ul class="nav nav-tabs ">
                         <p class="nav-item">
-                            <a class="nav-link active " href="{{ route('officers.index') }}">List</a>
+                            <a class="nav-link active bg-danger text-white "
+                               href="{{ route('offices.index') }}">List</a>
                         </p>
                         <p class="nav-item">
-                            <a class="nav-link " href="{{ route('officers.create') }}">Create</a>
+                            <a class="nav-link " href="{{ route('offices.create') }}">Create</a>
                         </p>
                     </ul>
                 </div>

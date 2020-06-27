@@ -19,6 +19,7 @@ class CreateClubsTable extends Migration
             $table->string('current_president');
             $table->string('meeting_time');
             $table->string('meeting_venue');
+            $table->string('meeting_day');
             $table->string('type');
             $table->integer('state_id');
             $table->text('image')->nullable();

@@ -1,4 +1,3 @@
-
 @extends('layout.app')
 @include('pages.header')
 @section('banner')
@@ -16,6 +15,10 @@
     <!-- Banner -->
 
 @endsection
+@section('css')
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+@endsection
 @section('content')
     <div class="container  mb-5">
         <div class="row pt-2 justify-content-center">
@@ -26,7 +29,7 @@
                             <a class="nav-link " href="{{ route('presidents.index') }}">List</a>
                         </p>
                         <p class="nav-item">
-                            <a class="nav-link active " href="{{ route('presidents.create') }}">Create</a>
+                            <a class="nav-link active bg-danger text-white" href="{{ route('presidents.create') }}">Create</a>
                         </p>
                     </ul>
                 </div>
@@ -53,14 +56,15 @@
                                     </ol>
                                 </div>
                             @endif
-                            <form class="needs-validation card-text" action="{{ route('presidents.store') }}" method="POST"
+                            <form class="needs-validation card-text" action="{{ route('presidents.store') }}"
+                                  method="POST"
                                   novalidate>
                                 {{ csrf_field() }}
                                 <div class="form-row">
                                     <div class="col-md-6 mb-3">
                                         <label class="control-label" for="validationCustom01">President's Email</label>
                                         <input type="email" name="presidents_mail" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="president@email.com "  required>
+                                               id="validationCustom01" placeholder="president@email.com " required>
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="control-label" for="validationCustom01">Club</label>
@@ -76,28 +80,32 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label class="control-label" for="validationCustom01">Tenure Start</label>
-                                        <input type="date" name="tenure_start" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder=" "  required>
+                                        <input name="tenure_start" class="form-control rounded-0 "
+                                               id="validationCustom01" placeholder="yyyy-mm-dd"
+                                               data-date-format="yyyy-mm-dd" data-provide="datepicker" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label class="control-label" for="validationCustom01">Tenure End</label>
-                                        <input type="date" name="tenure_end" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder=" "  required>
+                                        <input name="tenure_end" class="form-control rounded-0 "
+                                               data-date-format="yyyy-mm-dd" data-provide="datepicker"
+                                               id="validationCustom01" placeholder="yyyy-mm-dd" required>
+
                                     </div>
+
                                 </div>
                                 <button class="btn btn-primary rounded-0" type="submit">Add President</button>
                             </form>
 
                             <script>
                                 // Example starter JavaScript for disabling form submissions if there are invalid fields
-                                (function() {
+                                (function () {
                                     'use strict';
-                                    window.addEventListener('load', function() {
+                                    window.addEventListener('load', function () {
                                         // Fetch all the forms we want to apply custom Bootstrap validation styles to
                                         var forms = document.getElementsByClassName('needs-validation');
                                         // Loop over them and prevent submission
-                                        var validation = Array.prototype.filter.call(forms, function(form) {
-                                            form.addEventListener('submit', function(event) {
+                                        var validation = Array.prototype.filter.call(forms, function (form) {
+                                            form.addEventListener('submit', function (event) {
                                                 if (form.checkValidity() === false) {
                                                     event.preventDefault();
                                                     event.stopPropagation();
@@ -117,9 +125,37 @@
             </div>
 
 
-
         </div>
     </div>
 
 @endsection
 
+@section('bmm')
+    <script>
+        $(document).ready(function () {
+
+            $('.datepicker').datepicker({
+                format: {
+                    /*
+                    * Say our UI should display a week ahead,
+                    * but textbox should store the actual date.
+                    * This is useful if we need UI to select local dates,
+                    * but store in UTC
+                    */
+                    toDisplay: function (date, format, language) {
+                        var d = new Date(date);
+                        d.setDate(d.getDate() - 7);
+                        return d.toISOString();
+                    },
+                    toValue: function (date, format, language) {
+                        var d = new Date(date);
+                        d.setDate(d.getDate() + 7);
+                        return new Date(d);
+                    }
+                }
+            });
+        });
+    </script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+@endsection

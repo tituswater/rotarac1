@@ -17,8 +17,8 @@ class CreateOfficersTable extends Migration
             $table->id('officers_id');
             $table->string('member_email');
             $table->string('office_held');
-            $table->string('from');
-            $table->string('to');
+            $table->date('from');
+            $table->date('to');
             $table->string('_token');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));

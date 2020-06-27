@@ -19,8 +19,8 @@ class CreatePresidentsTable extends Migration
             $table->string('president_club');
             $table->string('_token');
             $table->date('tenure_start');
-            $table->integer('status')->nullable();
             $table->date('tenure_end');
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }

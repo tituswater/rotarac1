@@ -26,7 +26,8 @@
                             <a class="nav-link " href="{{ route('states.index') }}">List</a>
                         </p>
                         <p class="nav-item">
-                            <a class="nav-link active " href="{{ route('states.create') }}">Create</a>
+                            <a class="nav-link active bg-danger text-white"
+                               href="{{ route('states.create') }}">Create</a>
                         </p>
                     </ul>
                 </div>

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use DB;
-use App\Zone;
 use App\Adrr;
+use App\Zone;
+use DB;
+use Illuminate\Http\Request;
 
 class AdrrController extends Controller
 {
@@ -20,7 +20,7 @@ class AdrrController extends Controller
             ->join('users', 'adrrs.adrr_email', '=', 'users.email')
             ->join('clubs', 'users.member_club', '=', 'clubs.club_id')
             ->join('states', 'states.state_id', '=', 'clubs.state_id')
-            ->join('zones', 'states.zone_id', '=', 'zones.zone_id')
+            ->join('zones', 'zones.zone_id', '=', 'adrrs.adrr_zone')
             ->paginate(18);
 
         return view('admin.adrr.index', compact('adrrs'));
@@ -47,11 +47,23 @@ class AdrrController extends Controller
     {
         $request->validate([
             'adrr_email' => 'required',
-            'adrr_tenure_start'=> 'required',
-            'adrr_tenure_end'=> 'required',
+            'adrr_tenure_start' => 'required',
+            'adrr_tenure_end' => 'required',
         ]);
         Adrr::insert($request->all());
         return back()->with('success', 'Great! Officers added successfully.');
+    }
+
+    public function ListAdrr()
+    {
+        $adrrs = DB::table('adrrs')
+            ->join('users', 'adrrs.adrr_email', '=', 'users.email')
+            ->join('clubs', 'users.member_club', '=', 'clubs.club_id')
+            ->join('states', 'states.state_id', '=', 'clubs.state_id')
+            ->join('zones', 'zones.zone_id', '=', 'adrrs.adrr_zone')
+            ->paginate(18);
+
+        return view('adrr', compact('adrrs'));
     }
 
     /**

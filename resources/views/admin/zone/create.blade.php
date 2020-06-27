@@ -25,7 +25,8 @@
                             <a class="nav-link " href="{{ route('zones.index') }}">List</a>
                         </p>
                         <p class="nav-item">
-                            <a class="nav-link active " href="{{ route('zones.create') }}">Create</a>
+                            <a class="nav-link active bg-danger text-white "
+                               href="{{ route('zones.create') }}">Create</a>
                         </p>
                     </ul>
                 </div>

@@ -15,6 +15,10 @@
     </div>
     <!-- Banner -->
 @endsection
+@section('css')
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+@endsection
 @section('content')
 
     <div class="container mb-5">
@@ -26,7 +30,8 @@
                             <a class="nav-link  " href="{{ route('officers.index') }}">List</a>
                         </p>
                         <p class="nav-item">
-                            <a class="nav-link active" href="{{ route('officers.create') }}">Create</a>
+                            <a class="nav-link active bg-danger text-white"
+                               href="{{ route('officers.create') }}">Create</a>
                         </p>
                     </ul>
                 </div>
@@ -65,8 +70,9 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Office</label>
-                                        <select class="form-control" name="office_held" id="validationCustom01" required>
-                                            <option> </option>
+                                        <select class="form-control" name="office_held" id="validationCustom01"
+                                                required>
+                                            <option></option>
                                             @foreach ($offices as $office)
                                                 <option
                                                     value="{{ $office->office_id }}"> {{ $office->office_title }}</option>
@@ -76,14 +82,15 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Date of Assumption of Office</label>
-                                        <input name="from" data-provide="datepicker" class="form-control rounded-0 "
-                                               id="validationCustom01" data-date-format="mm/dd/yyyy"
-                                               placeholder="mm/dd/yyyy" required>
+                                        <input name="from" class="form-control rounded-0 " id="validationCustom01"
+                                               data-date-format="yyyy-mm-dd" data-provide="datepicker"
+                                               placeholder="yyyy-mm-dd" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="validationCustom01">Date of Completion</label>
-                                        <input data-provide="datepicker" name="to" class="form-control rounded-0 "
-                                               id="validationCustom01" placeholder="mm/dd/yyyy" required>
+                                        <input name="to" class="form-control rounded-0 "
+                                               id="validationCustom01" placeholder="yyyy-mm-dd"
+                                               data-date-format="yyyy-mm-dd" data-provide="datepicker" required>
                                     </div>
 
                                 </div>
@@ -135,6 +142,7 @@
 
 @endsection
 @section('bmm')
+
     <script>
         $(document).ready(function () {
 
@@ -160,5 +168,7 @@
             });
         });
     </script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 @endsection
 

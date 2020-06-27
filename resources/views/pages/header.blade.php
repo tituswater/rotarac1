@@ -11,11 +11,21 @@
                             <span>Email: <a href="mailto:name@email
                         .com">info@rotaractdistrict9125.org.ng</a></span>
                         @else
+                            @if(Auth::user()->avatar != null)
+                                <img src="{{asset('images/members/'. Auth::user()->avatar.'')}}"
+                                     class="img-thumbnail rounded" width="30"
+                                     alt="{{Auth::user()->name}}">
+                            @else
+                                <img src="{{asset('images/members/default.jpg')}}"
+                                     class="img-thumbnail rounded " width="30"
+                                     alt="{{Auth::user()->name}}">
+                            @endif
 
-                            <img src="{{asset('images/members/rac11.png')}}" class="img-fluid" width="30"
-                                 style="border-radius:100px;"> logged in as:
-                            {{ Auth::user()->nickname == null ? Auth::user()->name :
-                       Auth::user()->nickname }}
+
+
+                            logged in as:
+                            <strong class="text-white">{{ Auth::user()->nickname == null ? Auth::user()->name :
+                       Auth::user()->nickname }}</strong>
 
                             <a class="btn  btn-outline-light btn-sm" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
@@ -66,9 +76,10 @@
         <div class="container">
             <div class="row">
                 <aside class="col-2">
-                    <a href="index.html" class="charity-logo"><img src="{{asset('images/rotaract_logo.png')}}"
+                    <a href="index.html" class="charity-logo"
+                    ><img src="{{asset('images/rotaract_logo.png')}}"
 
-                                                                   alt="Rotaract District 9125, Nigeria logo"></a>
+                          alt="Rotaract District 9125, Nigeria logo"></a>
                 </aside>
                 <aside class="col-10">
                     <div class="float-right">
@@ -78,9 +89,9 @@
                                 <li class=""><a href="/">Home</a></li>
                                 <li><a href="/about">About US</a>
                                     <ul class="children">
-                                        <li><a href="{{route('officers.index')}}">District Officers</a></li>
-                                        <li><a href="{{route('adrrs.index')}}">Ass. Dist. Reps (ADRRs)</a></li>
-                                        <li><a href="#">Past Distric Oficers</a></li>
+                                        <li><a href="/district/officers/list">District Officers</a></li>
+                                        <li><a href="/adrr/list">Ass. Dist. Reps (ADRRs)</a></li>
+                                        <li><a href="/past/district/list">Past Distric Oficers</a></li>
                                         <li><a href="#"> </a></li>
 
                                     </ul>

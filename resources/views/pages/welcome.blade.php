@@ -113,6 +113,7 @@
     @include('pages.header')
 @endsection
 @section('banner')
+
     <br/><br/><br/><br/>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -135,6 +136,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+{{--    @include('blogetc::sitewide.recent_posts')--}}
     {{--    <section class="main-slider mt-md-5 p-0 bg-danger ">--}}
     {{--        <div class="lazy slider mb-0 p-0" data-sizes="50vw">--}}
     {{--            <div class="slide-box">--}}
@@ -177,7 +179,7 @@
     <div class="charity-main-content ">
         <!-- Main Section -->
 
-        <div class="charity-main-section charity-aboutus-text-full bg-white pb-4 ">
+        <div class="charity-main-section charity-aboutus-text-full bg-primary pb-4 ">
             <div class="container">
                 <div class="row">
                     {{--                    <div class="col-md-12">--}}
@@ -186,9 +188,7 @@
                     {{--                        </figure>--}}
                     {{--                    </div>--}}
                     <div class="col-md-12">
-
-
-                        <div class="bg-primary p-5 text-white">
+                        <div class=" p-5 text-white">
                             <h2 class="display-4 text-white">What is Rotaract</h2>
                             <hr/>
                             <p>Rotaract brings together people of ages 18 and above together to exchange ideas with
@@ -197,10 +197,7 @@
                                 to take action through service. </p>
                             <a href="/about" class="btn  btn-outline-light">Read more..</a>
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -210,40 +207,70 @@
             <div class="container">
                 <div class="row justify-content-center mt-4 mb-4">
                     <div class="col-md-12">
-                        <h1 class="display-4 pb-3 text-white">Rotaract
-                            <strong class="text-light   ">FOUR WAY TEST</strong></h1>
-                        </strong></h1>
-                        <ol class="text-white">
-                            <li>
-                                <h2 class="text-white">Is it the&nbsp;<strong class="text-white">TRUTH</strong>?</h2>
-                            </li>
-                            <li>
-                                <h2 class="text-white">Is it&nbsp;<strong class="text-white">FAIR&nbsp;</strong>all
-                                    concerned?</h2>
-                            </li>
-                            <li>
-                                <h2 class="text-white">Will it build&nbsp;<strong
-                                        class="text-white">GOODWILL&nbsp;</strong>and&nbsp;
-                                    <strong class="text-white">BETTER</strong>&nbsp;friendship?
-                                </h2>
-                            </li>
-                            <li>
-                                <h2 class="text-white">Will it be&nbsp;<strong class="text-white">BENEFICIAL</strong>&nbsp;to
-                                    all
-                                    concerned?</h2>
-                            </li>
-                        </ol>
+                        <div class="p-5">
+                            <h1 class="display-4 pb-3 text-white">Rotaract
+                                <strong class="text-light   ">FOUR WAY TEST</strong></h1>
+                            </strong></h1>
+                            <ol class="text-white">
+                                <li>
+                                    <h2 class="text-white">Is it the&nbsp;<strong class="text-white">TRUTH</strong>?
+                                    </h2>
+                                </li>
+                                <li>
+                                    <h2 class="text-white">Is it&nbsp;<strong class="text-white">FAIR&nbsp;</strong>all
+                                        concerned?</h2>
+                                </li>
+                                <li>
+                                    <h2 class="text-white">Will it build&nbsp;<strong
+                                            class="text-white">GOODWILL&nbsp;</strong>and&nbsp;
+                                        <strong class="text-white">BETTER</strong>&nbsp;friendship?
+                                    </h2>
+                                </li>
+                                <li>
+                                    <h2 class="text-white">Will it be&nbsp;<strong
+                                            class="text-white">BENEFICIAL</strong>&nbsp;to
+                                        all
+                                        concerned?</h2>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        {{--        <div class="charity-main-section pt-5">--}}
+        {{--            <div class="container">--}}
+        {{--                <div class="row">--}}
+        {{--                    <div class="col-md-12">--}}
+        {{--                        <div class="charity-fancy-title">--}}
+        {{--                            <p>Lorem ipsum dolor sit amet consectetur adipng elit Etiam dui velit posuere a voluat sitamet egestas ac ante.</p>--}}
+        {{--                        </div>--}}
+        {{--                    </div>--}}
+        {{--                    <div class="col-md-6">--}}
+        {{--                        <figure class="short-text-thumb"><img src="extra-images/short-text-thumb-1.jpg" alt=""></figure>--}}
+        {{--                    </div>--}}
+        {{--                    <div class="col-md-6 charity-short-text">--}}
+        {{--                        <h2>We are served since 35 years to helple people with trust</h2>--}}
+
+        {{--                        <p>Lorem ipsum dolor sit amet, consectetur adipng elit. Etiam dui velit, posuere a voluat sitamet, egestas ac ante.</p>--}}
+        {{--                        <ul>--}}
+        {{--                            <li>Lorem ipsum dolor amet, onsectetde cons ectetur nulla.</li>--}}
+        {{--                            <li>Lorem ipsum dolor amet, onsectetde cons ectetur nulla.</li>--}}
+        {{--                            <li>Lorem ipsum dolor amet, onsectetde cons ectetur nulla.</li>--}}
+        {{--                        </ul>--}}
+        {{--                        <a href="#" class="charity-more-btn"><i class="fas fa-arrow-right"></i> Read More</a>--}}
+        {{--                    </div>--}}
+
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
 
         <div class="charity-main-section charity-aboutus-text-full bg-light pt-5 pb-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
-                        <div class=" text-secondary">
+                        <div class=" text-secondary p-5">
                             <h1 class="text-dark display-4">About Rotaract District 9125 Nigeria</h1>
                             <hr/>
                             <p style="font-size: 18pt; line-height: 35pt;">The defunct Rotary Districts 9120 and 9130
@@ -269,10 +296,10 @@
         <div class="charity-main-section charity-aboutus-text-full bg-white pt-5 pb-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <h2 class="display-4 text-center" > <strong>ROTARACT</strong> <br/>Avenues of Service </h2>
+                    <h2 class="display-4 text-center"><strong>ROTARACT</strong> <br/>Avenues of Service </h2>
 
                     <div class="col-md-6">
-                        <div class=" text-secondary text-center">
+                        <div class=" text-secondary p-5 text-center">
                             <h2>Club Service</h2>
                             <h2>Vocational Service</h2>
                             <h2>Community Service</h2>
@@ -457,12 +484,14 @@
                                 <ul class="row">
                                     @foreach ($clubs as $club )
                                         <li class="col-md-4 ">
-                                            <figure><a href="#"><img src="{{asset('images/rotaract_district9125.png') }}"
-                                                                     alt="{{ $club->club_name }}"></a>
+                                            <figure><a href="#"><img
+                                                        src="{{asset('images/rotaract_district9125.png') }}"
+                                                        alt="{{ $club->club_name }}"></a>
                                                 <figcaption><a href="#" class="charity-cause-grid-hover">Open </a>
                                                 </figcaption>
                                             </figure>
-                                            <div data-width='90' data-target='95' class="charity-cause-progressbar"></div>
+                                            <div data-width='90' data-target='95'
+                                                 class="charity-cause-progressbar"></div>
                                             <div class="charity-cause-grid-text bg-light">
                                                 <small class="charity-cause-raised text-center">Zone <br>
                                                     <strong> {{ $club->zone_title }} </strong></small>
@@ -488,7 +517,7 @@
                 </div>
             </div>
         @endif
-        <!-- Main Section -->
+    <!-- Main Section -->
 
         <!-- Main Section -->
         <div class="charity-main-section charity-simple-team-full pt-5">

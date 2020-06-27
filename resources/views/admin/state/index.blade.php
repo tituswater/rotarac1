@@ -22,7 +22,7 @@
                 <div class="col-md-12 mb-2 ">
                     <ul class="nav nav-tabs ">
                         <p class="nav-item">
-                            <a class="nav-link active " href="{{ route('states.index') }}">List</a>
+                            <a class="nav-link active bg-danger text-white " href="{{ route('states.index') }}">List</a>
                         </p>
                         <p class="nav-item">
                             <a class="nav-link " href="{{ route('states.create') }}">Create</a>

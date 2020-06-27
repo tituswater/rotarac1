@@ -9,8 +9,13 @@ class Club extends Model
     protected $fillable = [
         'club_name',
         'state_id',
-        'image',
         'sponsor',
         'chartered',
-       ];
+        'meeting_day',
+        'meeting_time',
+        'meeting_venue',
+        'type',
+        'club_acronym',
+
+    ];
 }

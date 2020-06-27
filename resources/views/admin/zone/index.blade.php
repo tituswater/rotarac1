@@ -22,7 +22,7 @@
                 <div class="col-md-12 mb-2 ">
                     <ul class="nav nav-tabs ">
                         <p class="nav-item">
-                            <a class="nav-link active " href="{{ route('zones.index') }}">List</a>
+                            <a class="nav-link active bg-danger text-white" href="{{ route('zones.index') }}">List</a>
                         </p>
                         <p class="nav-item">
                             <a class="nav-link " href="{{ route('zones.create') }}">Create</a>

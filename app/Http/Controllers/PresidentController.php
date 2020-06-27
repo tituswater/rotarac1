@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Club;
 use App\President;
-use Illuminate\Http\Request;
 use DB;
+use Illuminate\Http\Request;
 
 class PresidentController extends Controller
 {
@@ -18,7 +18,7 @@ class PresidentController extends Controller
     {
         $presidents = DB::table('presidents')
             ->join('users', 'presidents.presidents_mail', '=', 'users.email')
-            ->join('clubs', 'users.member_club', '=', 'clubs.club_id')
+            ->join('clubs', 'presidents.president_club', '=', 'clubs.club_id')
             ->join('states', 'clubs.state_id', '=', 'states.state_id')
             ->join('zones', 'states.zone_id', '=', 'zones.zone_id')->get();
         $presidentsTotal = $presidents->count();
