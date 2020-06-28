@@ -23,5 +23,31 @@
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
-    }
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-basic-styles": "^20.0.0",
+        "@ckeditor/ckeditor5-dev-utils": "^21.0.0",
+        "@ckeditor/ckeditor5-editor-classic": "^20.0.0",
+        "@ckeditor/ckeditor5-essentials": "^20.0.0",
+        "@ckeditor/ckeditor5-paragraph": "^20.0.0",
+        "@ckeditor/ckeditor5-paste-from-office": "^20.0.0",
+        "@ckeditor/ckeditor5-theme-lark": "^20.0.0"
+    },
+    "name": "rac",
+    "description": "<p align=\"center\"><img src=\"https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg\" width=\"400\"></p>",
+    "version": "1.0.0",
+    "main": "webpack.mix.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tituswater/rotarac1.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tituswater/rotarac1/issues"
+    },
+    "homepage": "https://github.com/tituswater/rotarac1#readme"
 }

@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::post('user/change_club', 'UserController@updateUserClub');
+Route::post('user/update/profile', 'UserController@UpdateUserProfile');
 Route::post('change_password', 'UserController@updateUserPassword');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('user/change_avatar', 'UserController@changeAvatar');
@@ -43,16 +44,5 @@ Route::resource('offices', 'OfficeController');
 Route::resource('officers', 'OfficerController');
 Route::resource('presidents', 'PresidentController');
 Route::resource('adrrs', 'AdrrController');
-//Route::resource('users', 'UserController');
+Route::resource('users', 'UserController');
 
-//Route::get('changepassword', function() {
-//    $user = App\User::where('email', 'admin@laravel.com')->first();
-//    $user->password = Hash::make('123456');
-//    $user->save();
-//
-//    echo 'Password changed successfully.';
-//});
-Route::prefix('api')->group(function () {
-    Route::post('/process', 'FilepondController@upload')->name('filepond.upload');
-    Route::delete('/process', 'FilepondController@delete')->name('filepond.delete');
-});

@@ -187,9 +187,27 @@ access_time
 @section('bmm')
 
     <script>
+
         $(document).ready(function () {
+            ClassicEditor
+                .create(document.querySelector('#editor'), {
+                    // plugins: [ Essentials, Paragraph, Bold, Italic,PasteFromOffice ]
+                    // toolbar: [ 'bold', 'italic' ]
+                })
+                .then(editor => {
+                    console.log('Editor was initialized', editor);
+                })
+                .catch(error => {
+                    console.error(error.stack);
+                });
+            editor.editing.view.change(writer => {
+                writer.setAttribute('spellcheck', 'true', editor.editing.view
+                    .document.getRoot());
+            });
             $('.datepicker').datepicker({
                 autoclose: true,
+                showInputs: false,
+                template: 'modal',
                 format: {
                     /*
                      * Say our UI should display a week ahead,
@@ -209,7 +227,7 @@ access_time
                     }
                 }
             });
-            $('#timepicker1').timepicker();
+
         });
     </script>
     <script

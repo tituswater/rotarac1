@@ -36,7 +36,8 @@ class CreateBlogEtcPostsTable extends Migration
             $table->string('image_medium')->nullable();
             $table->string('image_thumbnail')->nullable();
 
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
 
         Schema::create('blog_etc_categories', static function (Blueprint $table) {

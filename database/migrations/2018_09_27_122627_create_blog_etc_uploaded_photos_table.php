@@ -21,7 +21,8 @@ class CreateBlogEtcUploadedPhotosTable extends Migration
             $table->string('source')->default('unknown');
             $table->unsignedInteger('uploader_id')->nullable()->index();
 
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
         Schema::table('blog_etc_posts', static function (Blueprint $table) {
             $table->string('seo_title')->nullable();

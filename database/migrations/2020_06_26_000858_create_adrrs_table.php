@@ -21,7 +21,8 @@ class CreateAdrrsTable extends Migration
             $table->date('adrr_tenure_end');
             $table->string('_token');
             $table->integer('status')->default(0);
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

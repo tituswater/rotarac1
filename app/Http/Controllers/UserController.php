@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use DB;
-use Illuminate\Routing\RedirectController;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Image;
 
@@ -63,7 +62,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('editUserInfo', compact('user'));
     }
 
     /**
@@ -75,7 +76,40 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return 0;
+
+    }
+
+    public function UpdateUserProfile(Request $request)
+    {
+        $request->validate([
+
+            'email' => 'required',
+//            'nickname' => 'required|min:2',
+            'phone' => 'required',
+            'user_dob' => 'required',
+//            'linkedin_profile' => 'required',
+//            'instagram_profile' => 'required',
+//            'twitter_profile' => 'required',
+//            'facebook_profile' => 'required',
+            'bio' => 'required',
+        ]);
+
+        DB::table('users')
+            ->where('email', $request->email)
+            ->update($request->all()
+//                ['email' => $request->email],
+//                ['nickname' => $request->nick],
+//                ['phone' => $request->phone],
+//                ['bio' => $request->bio],
+//                ['user_dob' => $request->user_dob],
+//                ['facebook_profile' => $request->facebook_profile],
+//                ['linkedin_profile' => $request->linkedin_profile],
+//                ['instagram_profile' => $request->instagram_profile],
+//                ['twitter_profile' => $request->twitter_profile]
+            );
+
+        return back()
+            ->with('success', 'Profile Updated Successfully.');
     }
 
     protected function updateUser(Request $request)
